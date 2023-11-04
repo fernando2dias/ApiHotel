@@ -10,6 +10,9 @@ namespace Domain.Dtos.Customer
 {
     public class CustomerDtoUpdate
     {
+        [Required(ErrorMessage = "ID é campo obrigatório")]
+        public Guid Id { get; set; }
+
         [Required(ErrorMessage = "Nome é campo obrigatório")]
         [StringLength(60, ErrorMessage = "Nome deve ter no máximo {1} caracteres")]
         public string Name { get; set; }

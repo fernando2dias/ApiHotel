@@ -36,7 +36,7 @@ public class CustomersController : ControllerBase
 
     //[Authorize("Bearer")]
     [HttpGet]
-    [Route("{id}", Name = "GetById")]
+    [Route("{id}", Name = "GetCustomerById")]
     public async Task<ActionResult> Get(Guid id)
     {
         if (!ModelState.IsValid)
@@ -68,7 +68,7 @@ public class CustomersController : ControllerBase
             var result = await _service.Post(customer);
             if (result != null)
             {
-                return Created(new Uri(Url.Link("GetById", new { id = result.Id })), result);
+                return Created(new Uri(Url.Link("GetCustomerById", new { id = result.Id })), result);
             }
             else
             {

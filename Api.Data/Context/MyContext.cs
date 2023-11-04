@@ -10,6 +10,7 @@ namespace Api.Data.Context
     {
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<CustomerEntity> Customers { get; set; }
+        public DbSet<DependentPersonEntity> DependentPersons { get; set; }
 
 
         public MyContext(DbContextOptions<MyContext> options) : base(options)

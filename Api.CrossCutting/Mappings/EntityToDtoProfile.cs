@@ -24,6 +24,7 @@ namespace Api.CrossCutting.Mappings
                 .ReverseMap();
 
 
+
             CreateMap<CustomerDto, CustomerEntity>()
                 .ReverseMap();
 
@@ -31,6 +32,17 @@ namespace Api.CrossCutting.Mappings
                 .ReverseMap();
 
             CreateMap<CustomerDtoUpdateResult, CustomerEntity>()
+                .ReverseMap();
+
+
+
+            CreateMap<DependentPersonDto, DependentPersonEntity>()
+                .ReverseMap();
+
+            CreateMap<DependentPersonDtoCreateResult, DependentPersonEntity>()
+                .ReverseMap();
+
+            CreateMap<DependentPersonDtoUpdateResult, DependentPersonEntity>()
                 .ReverseMap();
         }
     }

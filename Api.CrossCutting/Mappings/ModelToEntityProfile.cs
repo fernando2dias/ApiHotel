@@ -19,6 +19,9 @@ namespace Api.CrossCutting.Mappings
 
             CreateMap<CustomerEntity, CustomerModel>()
                 .ReverseMap();
+
+            CreateMap<DependentPersonEntity, DependentPersonModel>()
+                .ReverseMap();
         }
     }
 }
