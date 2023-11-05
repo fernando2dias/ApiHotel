@@ -6,6 +6,7 @@ using Api.Domain.Dtos.User;
 using Api.Domain.Entities;
 using AutoMapper;
 using Domain.Dtos.Customer;
+using Domain.Dtos.Hotel;
 using Domain.Entities;
 
 namespace Api.CrossCutting.Mappings
@@ -44,6 +45,29 @@ namespace Api.CrossCutting.Mappings
 
             CreateMap<DependentPersonDtoUpdateResult, DependentPersonEntity>()
                 .ReverseMap();
+
+
+
+            CreateMap<HotelDto, HotelEntity>()
+                .ReverseMap();
+
+            CreateMap<HotelDtoCreateResult, HotelEntity>()
+                .ReverseMap();
+
+            CreateMap<HotelDtoUpdateResult, HotelEntity>()
+                .ReverseMap();
+
+
+            CreateMap<RoomDto, RoomEntity>()
+                .ReverseMap();
+
+            CreateMap<RoomDtoCreateResult, RoomEntity>()
+                .ReverseMap();
+
+            CreateMap<RoomDtoUpdateResult, RoomEntity>()
+                .ReverseMap();
+
+
         }
     }
 }

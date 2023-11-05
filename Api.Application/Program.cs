@@ -21,19 +21,19 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "Curso de Api C#",
-        Description = "Arquitetura DDD",
-        TermsOfService = new Uri("https://github.com/fernando2dias"),
+        Title = "Hotel API",
+        Description = "Desafio Aplicação Web Distribuída - Tema: Site de Viagens e Turismo",
+        TermsOfService = new Uri("https://facens.br"),
         Contact = new OpenApiContact
         {
-            Name = "Fernando Dias Motta",
+            Name = "Fernando Dias Motta RA 180016 \n Leonardo Botaro \n Lucas Fernando",
             Email = "fernando3dias@gmail.com",
-            Url = new Uri("https://www.linkedin.com/in/fernando2dias/")
+            Url = new Uri("https://facens.br")
         },
         License = new OpenApiLicense
         {
             Name = "Termo de Licença de Uso",
-            Url = new Uri("https://www.linkedin.com/in/fernando2dias/")
+            Url = new Uri("https://facens.br")
         }
     });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

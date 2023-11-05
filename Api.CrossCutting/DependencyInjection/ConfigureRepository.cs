@@ -18,6 +18,8 @@ namespace Api.CrossCutting.DependencyInjection
             serviceCollection.AddScoped<IUserRepository, UserImplementation>();
             serviceCollection.AddScoped<ICustomerRepository, CustomerImplementation>();
             serviceCollection.AddScoped<IDependentPersonRepository, DependentPersonImplementation>();
+            serviceCollection.AddScoped<IHotelRepository, HotelImplementation>();
+            serviceCollection.AddScoped<IRoomRepository, RoomImplementation>();
 
 
             serviceCollection.AddDbContext<MyContext>(

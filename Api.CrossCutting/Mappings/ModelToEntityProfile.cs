@@ -22,6 +22,12 @@ namespace Api.CrossCutting.Mappings
 
             CreateMap<DependentPersonEntity, DependentPersonModel>()
                 .ReverseMap();
+
+            CreateMap<HotelEntity, HotelModel>()
+                .ReverseMap();
+
+            CreateMap<RoomEntity, RoomModel>()
+                .ReverseMap();
         }
     }
 }

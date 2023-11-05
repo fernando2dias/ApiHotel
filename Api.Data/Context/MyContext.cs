@@ -11,6 +11,7 @@ namespace Api.Data.Context
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<CustomerEntity> Customers { get; set; }
         public DbSet<DependentPersonEntity> DependentPersons { get; set; }
+        public DbSet<HotelEntity> Hotels { get; set; }
 
 
         public MyContext(DbContextOptions<MyContext> options) : base(options)
@@ -24,6 +25,8 @@ namespace Api.Data.Context
 
             modelBuilder.Entity<UserEntity>(new UserMap().Configure);
             modelBuilder.Entity<CustomerEntity>(new CustomerMap().Configure);
+            modelBuilder.Entity<HotelEntity>(new HotelMap().Configure);
+
 
             modelBuilder.Entity<UserEntity>().HasData(
                 new UserEntity
@@ -49,6 +52,23 @@ namespace Api.Data.Context
                     BirthDate = DateTime.ParseExact("21/09/1986", "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
                     CPF="111.222.333-44",
                     Password="123mudar",
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                }
+            );
+
+
+            modelBuilder.Entity<HotelEntity>().HasData(
+                new HotelEntity
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Facens Hotel",
+                    Address = "Rodovia Senador José Ermírio de Moraes, 1425",
+                    ZipCode = "18085-784",
+                    State = "SP",
+                    City = "Sorocaba",
+                    AvgTicket = 150,
+                    Rooms = null,
                     CreateAt = DateTime.Now,
                     UpdateAt = DateTime.Now
                 }
