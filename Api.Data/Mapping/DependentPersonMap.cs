@@ -13,7 +13,7 @@ namespace Data.Mapping
     {
         public void Configure(EntityTypeBuilder<DependentPersonEntity> builder)
         {
-            builder.ToTable("Customer");
+            builder.ToTable("DependentPerson");
 
             builder.HasKey(dp => dp.Id);
 
@@ -28,8 +28,6 @@ namespace Data.Mapping
             builder.Property(dp => dp.RG).HasMaxLength(11);
 
             builder.Property(dp => dp.Passport).HasMaxLength(30);
-
-            builder.Property(dp => dp.Customer).IsRequired();
 
         }
     }

@@ -12,6 +12,7 @@ namespace Api.Data.Context
         public DbSet<CustomerEntity> Customers { get; set; }
         public DbSet<DependentPersonEntity> DependentPersons { get; set; }
         public DbSet<HotelEntity> Hotels { get; set; }
+        public DbSet<ReviewEntity> Reviews { get; set; }
 
 
         public MyContext(DbContextOptions<MyContext> options) : base(options)
@@ -25,7 +26,10 @@ namespace Api.Data.Context
 
             modelBuilder.Entity<UserEntity>(new UserMap().Configure);
             modelBuilder.Entity<CustomerEntity>(new CustomerMap().Configure);
+            modelBuilder.Entity<DependentPersonEntity>(new DependentPersonMap().Configure);
             modelBuilder.Entity<HotelEntity>(new HotelMap().Configure);
+            modelBuilder.Entity<RoomEntity>(new RoomMap().Configure);
+            modelBuilder.Entity<ReviewEntity>(new ReviewMap().Configure);
 
 
             modelBuilder.Entity<UserEntity>().HasData(

@@ -20,6 +20,7 @@ namespace Api.CrossCutting.DependencyInjection
             serviceCollection.AddScoped<IDependentPersonRepository, DependentPersonImplementation>();
             serviceCollection.AddScoped<IHotelRepository, HotelImplementation>();
             serviceCollection.AddScoped<IRoomRepository, RoomImplementation>();
+            serviceCollection.AddScoped<IReviewRepository, ReviewImplementation>();
 
 
             serviceCollection.AddDbContext<MyContext>(

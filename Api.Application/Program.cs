@@ -26,15 +26,16 @@ builder.Services.AddSwaggerGen(c =>
         TermsOfService = new Uri("https://facens.br"),
         Contact = new OpenApiContact
         {
-            Name = "Fernando Dias Motta RA 180016 \n Leonardo Botaro \n Lucas Fernando",
+            Name = "Fernando Dias Motta 180016   ***   Leonardo Picanço Bottaro 180043   ***   Lucas Fernando Basilio da Costa 173264",
             Email = "fernando3dias@gmail.com",
             Url = new Uri("https://facens.br")
         },
-        License = new OpenApiLicense
-        {
-            Name = "Termo de Licença de Uso",
-            Url = new Uri("https://facens.br")
-        }
+
+        //License = new OpenApiLicense
+        //{
+        //    Name = "Termo de Licença de Uso",
+        //    Url = new Uri("https://facens.br")
+        //}
     });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -115,7 +116,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Curso de API .net DDD");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Hotel API");
         c.RoutePrefix = "swagger";
     });
 }

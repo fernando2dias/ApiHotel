@@ -7,6 +7,7 @@ using Api.Domain.Entities;
 using AutoMapper;
 using Domain.Dtos.Customer;
 using Domain.Dtos.Hotel;
+using Domain.Dtos.Review;
 using Domain.Entities;
 
 namespace Api.CrossCutting.Mappings
@@ -65,6 +66,17 @@ namespace Api.CrossCutting.Mappings
                 .ReverseMap();
 
             CreateMap<RoomDtoUpdateResult, RoomEntity>()
+                .ReverseMap();
+
+
+
+            CreateMap<ReviewDto, ReviewEntity>()
+                .ReverseMap();
+
+            CreateMap<ReviewDtoCreateResult, RoomEntity>()
+                .ReverseMap();
+
+            CreateMap<ReviewDtoUpdateResult, RoomEntity>()
                 .ReverseMap();
 
 
