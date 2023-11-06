@@ -17,5 +17,10 @@ namespace Data.Implementations
         {
             _dataset = context.Set<DependentPersonEntity>();
         }
+
+        public async Task<IEnumerable<DependentPersonEntity>> DependentPersonByCustomer(Guid id)
+        {
+            return await _dataset.Include(d => d.Customer).Where(d => d.Customer.Id == id).ToListAsync();
+        }
     }
 }

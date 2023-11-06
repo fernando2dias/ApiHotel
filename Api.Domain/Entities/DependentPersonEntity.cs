@@ -9,12 +9,12 @@ namespace Domain.Entities
 {
     public class DependentPersonEntity : BaseEntity
     {
-        public String Name { get; set; }
-        public String LastName { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
-        public String CPF { get; set; }
-        public String RG { get; set; }
-        public String Passport { get; set; }
+        public string CPF { get; set; }
+        public string RG { get; set; }
+        public string Passport { get; set; }
         public CustomerEntity Customer { get; set; }
     }
 }

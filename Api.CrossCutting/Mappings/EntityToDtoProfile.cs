@@ -38,14 +38,14 @@ namespace Api.CrossCutting.Mappings
 
 
 
-            CreateMap<DependentPersonDto, DependentPersonEntity>()
-                .ReverseMap();
+            //CreateMap<DependentPersonDto, DependentPersonEntity>()
+            //    .ReverseMap();
 
-            CreateMap<DependentPersonDtoCreateResult, DependentPersonEntity>()
-                .ReverseMap();
+            //CreateMap<DependentPersonDtoCreateResult, DependentPersonEntity>()
+            //    .ReverseMap();
 
-            CreateMap<DependentPersonDtoUpdateResult, DependentPersonEntity>()
-                .ReverseMap();
+            //CreateMap<DependentPersonDtoUpdateResult, DependentPersonEntity>()
+            //    .ReverseMap();
 
 
 

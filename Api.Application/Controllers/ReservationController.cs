@@ -1,6 +1,6 @@
 ﻿using Domain.Dtos.Customer;
 using Domain.Interfaces.Services.Customer;
-using Microsoft.AspNetCore.Http;
+using Domain.Interfaces.Services.Reservation;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -8,15 +8,17 @@ namespace Application.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DependentPersonController : ControllerBase
+    public class ReservationController : ControllerBase
     {
-        private IDependentPersonService _service;
+        private IReservationService _service;
 
-        public DependentPersonController(IDependentPersonService service)
+        public ReservationController(IReservationService service)
         {
             _service = service;
         }
 
+
+        //[Authorize("Bearer")]
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
@@ -36,13 +38,9 @@ namespace Application.Controllers
         }
 
 
-
-
-
-
         //[Authorize("Bearer")]
         [HttpGet]
-        [Route("{id}", Name = "GetDependentPersonById")]
+        [Route("{id}", Name = "GetReservationById")]
         public async Task<ActionResult> Get(Guid id)
         {
             if (!ModelState.IsValid)
@@ -60,11 +58,10 @@ namespace Application.Controllers
             }
         }
 
-
-
         //[Authorize("Bearer")]
-        [HttpPost]
-        public async Task<ActionResult> Post([FromBody] DependentPerson dependent)
+        [HttpGet]
+        [Route("{ReservationCustomer}", Name = "GetReservationByCustormerId")]
+        public async Task<ActionResult> GetReservationByCustomer(Guid customerId)
         {
             if (!ModelState.IsValid)
             {
@@ -73,10 +70,52 @@ namespace Application.Controllers
 
             try
             {
-                var result = await _service.Post(dependent);
+                return Ok(await _service.GetAllByCustomer(customerId));
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        //[Authorize("Bearer")]
+        [HttpGet]
+        [Route("{ReservationHotel}", Name = "GetReservationByHotelId")]
+        public async Task<ActionResult> GetReservationByHotel(Guid hotelId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                return Ok(await _service.GetAllByCustomer(hotelId));
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+
+
+
+        //[Authorize("Bearer")]
+        [HttpPost]
+        public async Task<ActionResult> Post([FromBody] Reservation reservation)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var result = await _service.Post(reservation);
                 if (result != null)
                 {
-                    return Created(new Uri(Url.Link("GetDependentPersonById", new { id = result.Id })), result);
+                    return Created(new Uri(Url.Link("GetReservationById", new { id = result.Id })), result);
                 }
                 else
                 {
@@ -92,7 +131,7 @@ namespace Application.Controllers
 
         //[Authorize("Bearer")]
         [HttpPut]
-        public async Task<ActionResult> Put([FromBody] DependentPerson dependent)
+        public async Task<ActionResult> Put([FromBody] Reservation reservation)
         {
             if (!ModelState.IsValid)
             {
@@ -101,7 +140,7 @@ namespace Application.Controllers
 
             try
             {
-                var result = await _service.Put(dependent);
+                var result = await _service.Put(reservation);
                 if (result != null)
                 {
                     return Ok(result);
@@ -116,6 +155,7 @@ namespace Application.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
         }
+
 
 
         //[Authorize("Bearer")]
@@ -136,6 +176,9 @@ namespace Application.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
         }
+
+
+
 
 
     }

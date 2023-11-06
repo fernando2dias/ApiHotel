@@ -8,6 +8,7 @@ using AutoMapper;
 using Domain.Dtos.Customer;
 using Domain.Dtos.Hotel;
 using Domain.Dtos.Review;
+using Domain.Interfaces.Services.Reservation;
 using Domain.Models;
 
 namespace Api.CrossCutting.Mappings
@@ -24,9 +25,9 @@ namespace Api.CrossCutting.Mappings
             CreateMap<CustomerModel, CustomerDtoCreate>().ReverseMap();
             CreateMap<CustomerModel, CustomerDtoUpdate>().ReverseMap();
 
-            CreateMap<DependentPersonModel, DependentPersonDto>().ReverseMap();
-            CreateMap<DependentPersonModel, DependentPersonDtoCreate>().ReverseMap();
-            CreateMap<DependentPersonModel, DependentPersonDtoUpdate>().ReverseMap();
+            //CreateMap<DependentPersonModel, DependentPersonDto>().ReverseMap();
+            //CreateMap<DependentPersonModel, DependentPersonDtoCreate>().ReverseMap();
+            //CreateMap<DependentPersonModel, DependentPersonDtoUpdate>().ReverseMap();
 
             CreateMap<HotelModel, HotelDto>().ReverseMap();
             CreateMap<HotelModel, HotelDtoCreate>().ReverseMap();
@@ -39,6 +40,8 @@ namespace Api.CrossCutting.Mappings
             CreateMap<ReviewModel, ReviewDto>().ReverseMap();
             CreateMap<ReviewModel, ReviewDtoCreate>().ReverseMap();
             CreateMap<ReviewModel, ReviewDtoUpdate>().ReverseMap();
+
+           
 
 
         }

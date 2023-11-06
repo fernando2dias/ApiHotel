@@ -21,6 +21,7 @@ namespace Api.CrossCutting.DependencyInjection
             serviceCollection.AddScoped<IHotelRepository, HotelImplementation>();
             serviceCollection.AddScoped<IRoomRepository, RoomImplementation>();
             serviceCollection.AddScoped<IReviewRepository, ReviewImplementation>();
+            serviceCollection.AddScoped<IReservationRepository, ReservationImplementation>();
 
 
             serviceCollection.AddDbContext<MyContext>(

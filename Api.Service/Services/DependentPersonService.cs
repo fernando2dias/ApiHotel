@@ -4,21 +4,17 @@ using Domain.Dtos.Customer;
 using Domain.Entities;
 using Domain.Interfaces.Services.Customer;
 using Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Domain.Repository;
 
 namespace Service.Services
 {
     public class DependentPersonService : IDependentPersonService
     {
-        private IRepository<DependentPersonEntity> _repository;
+        private IDependentPersonRepository _repository;
         private readonly IMapper _mapper;
 
 
-        public DependentPersonService(IRepository<DependentPersonEntity> repository, IMapper mapper)
+        public DependentPersonService(IDependentPersonRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -29,34 +25,41 @@ namespace Service.Services
             return await _repository.DeleteAsync(id);
         }
 
-        public async Task<DependentPersonDto> Get(Guid id)
+        public async Task<DependentPersonEntity> Get(Guid id)
         {
             var entity = await _repository.SelectAsync(id);
-            return _mapper.Map<DependentPersonDto>(entity) ?? new DependentPersonDto();
+            return _mapper.Map<DependentPersonEntity>(entity) ?? new DependentPersonEntity();
         }
 
-        public async Task<IEnumerable<DependentPersonDto>> GetAll()
+        public async Task<IEnumerable<DependentPersonEntity>> GetAll()
         {
             var listEntity = await _repository.SelectAsync();
-            return _mapper.Map<IEnumerable<DependentPersonDto>>(listEntity);
+            return _mapper.Map<IEnumerable<DependentPersonEntity>>(listEntity);
         }
 
-        public async Task<DependentPersonDtoCreateResult> Post(DependentPersonDtoCreate dependent)
+
+        public async Task<IEnumerable<DependentPersonEntity>> GetAllByCustumerId(Guid customerId) 
+        {
+            var listEntity = await _repository.DependentPersonByCustomer(customerId);
+            return _mapper.Map<IEnumerable<DependentPersonEntity>>(listEntity);
+        }
+
+        public async Task<DependentPersonEntity> Post(DependentPerson dependent)
         {
             var model = _mapper.Map<DependentPersonModel>(dependent);
             var entity = _mapper.Map<DependentPersonEntity>(model);
             var result = await _repository.InsertAsync(entity);
 
-            return _mapper.Map<DependentPersonDtoCreateResult>(result);
+            return _mapper.Map<DependentPersonEntity>(result);
         }
 
-        public async Task<DependentPersonDtoUpdateResult> Put(DependentPersonDtoUpdate dependent)
+        public async Task<DependentPersonEntity> Put(DependentPerson dependent)
         {
             var model = _mapper.Map<DependentPersonModel>(dependent);
             var entity = _mapper.Map<DependentPersonEntity>(model);
             var result = await _repository.UpdateAsync(entity);
 
-            return _mapper.Map<DependentPersonDtoUpdateResult>(result);
+            return _mapper.Map<DependentPersonEntity>(result);
         }
     }
 }

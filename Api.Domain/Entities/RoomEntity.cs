@@ -13,7 +13,16 @@ namespace Domain.Entities
         public TypeRoom TypeRoom { get; set; }
         public int NumberBeds { get; set; }
         public decimal PricePerNight { get; set; }
+        public Status Status { get; set; }
+
         public HotelEntity Hotel { get; set; }
+    }
+
+    public enum Status
+    {
+        Available = 1,
+        Busy = 2,
+        Reserved = 3
     }
 
 

@@ -31,6 +31,9 @@ namespace Api.CrossCutting.Mappings
 
             CreateMap<ReviewEntity, ReviewModel>()
                 .ReverseMap();
+
+            CreateMap<ReservationEntity, ReservationModel>()
+                .ReverseMap();
         }
     }
 }
