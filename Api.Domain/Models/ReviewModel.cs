@@ -31,18 +31,18 @@ namespace Domain.Models
             set { _comment = value; } 
         }
 
-        private CustomerEntity _customer;
-        public CustomerEntity Customer 
+        private Guid _customerId;
+        public Guid CustomerId 
         {
-            get { return _customer; }
-            set { _customer = value; } 
+            get { return _customerId; }
+            set { _customerId = value; } 
         }
 
-        private HotelEntity _hotel;
-        public HotelEntity Hotel 
+        private Guid _hotelId;
+        public Guid HotelId 
         {
-            get { return _hotel; }
-            set { _hotel = value; } 
+            get { return _hotelId; }
+            set { _hotelId = value; } 
         }
     }
 }

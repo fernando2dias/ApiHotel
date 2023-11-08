@@ -58,7 +58,6 @@ builder.Services.AddSwaggerGen(c =>
 
 
 
-
 // TODO futuramente usar a injeção utilizando o crosscutting
 ConfigureService.ConfigureDependenciesService(builder.Services);
 ConfigureRepository.ConfigureDependenciesRepository(builder.Services, builder.Configuration);

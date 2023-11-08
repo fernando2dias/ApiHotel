@@ -12,8 +12,8 @@ namespace Domain.Interfaces.Services.Review
     {
         Task<ReviewDto> Get(Guid id);
         Task<IEnumerable<ReviewDto>> GetAll();
-        Task<IEnumerable<ReviewDto>> GetAllByHotel(ReviewDto review);
-        Task<IEnumerable<ReviewDto>> GetAllByCustomer(ReviewDto review);
+        Task<IEnumerable<ReviewDto>> GetAllByHotel(Guid hotelId);
+        Task<IEnumerable<ReviewDto>> GetAllByCustomer(Guid customerId);
         Task<ReviewDtoCreateResult> Post(ReviewDtoCreate review);
         Task<ReviewDtoUpdateResult> Put(ReviewDtoUpdate review);
         Task<bool> Delete(Guid id);

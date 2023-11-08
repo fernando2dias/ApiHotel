@@ -10,7 +10,7 @@ namespace Domain.Repository
 {
     public interface IReviewRepository : IRepository<ReviewEntity>
     {
-        Task<List<ReviewEntity>> FindByHotel(ReviewEntity review);
-        Task<List<ReviewEntity>> FindByCustomer(ReviewEntity review);
+        Task<List<ReviewEntity>> FindByHotel(Guid hotelId);
+        Task<List<ReviewEntity>> FindByCustomer(Guid customerId);
     }
 }

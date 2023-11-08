@@ -63,7 +63,7 @@ namespace Application.Controllers
         //[Authorize("Bearer")]
         [HttpGet]
         [Route("{customer}", Name = "GetReviewByCustomer")]
-        public async Task<ActionResult> GetReviewByCustomer(ReviewDto review)
+        public async Task<ActionResult> GetReviewByCustomer(Guid customerId)
         {
             if (!ModelState.IsValid)
             {
@@ -72,7 +72,7 @@ namespace Application.Controllers
 
             try
             {
-                return Ok(await _service.GetAllByCustomer(review));
+                return Ok(await _service.GetAllByCustomer(customerId));
             }
             catch (ArgumentException e)
             {
@@ -85,7 +85,7 @@ namespace Application.Controllers
         //[Authorize("Bearer")]
         [HttpGet]
         [Route("{hotel}", Name = "GetReviewByHotel")]
-        public async Task<ActionResult> GetReviewByHotel(ReviewDto review)
+        public async Task<ActionResult> GetReviewByHotel(Guid hotelId)
         {
             if (!ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace Application.Controllers
 
             try
             {
-                return Ok(await _service.GetAllByHotel(review));
+                return Ok(await _service.GetAllByHotel(hotelId));
             }
             catch (ArgumentException e)
             {

@@ -5,6 +5,7 @@ using Domain.Dtos.Review;
 using Domain.Entities;
 using Domain.Interfaces.Services.Review;
 using Domain.Models;
+using Domain.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,10 @@ namespace Service.Services
     public class ReviewService : IReviewService
     {
 
-        private IRepository<ReviewEntity> _repository;
+        private IReviewRepository _repository;
         private readonly IMapper _mapper;
 
-        public ReviewService(IRepository<ReviewEntity> repository, IMapper mapper)
+        public ReviewService(IReviewRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -41,22 +42,23 @@ namespace Service.Services
             return _mapper.Map<IEnumerable<ReviewDto>>(listEntity);
         }
 
-        public async Task<IEnumerable<ReviewDto>> GetAllByCustomer(ReviewDto review)
-        {
-            var listEntity = await _repository.SelectAsync(review.Customer.Id);
-            return _mapper.Map<IEnumerable<ReviewDto>>(listEntity);
-        }
 
-        public async Task<IEnumerable<ReviewDto>> GetAllByHotel(ReviewDto review)
+        public async Task<IEnumerable<ReviewDto>> GetAllByHotel(Guid hotelId)
         {
-            var listEntity = await _repository.SelectAsync(review.Hotel.Id);
+            var listEntity = await _repository.FindByHotel(hotelId); ;
             return _mapper.Map<IEnumerable<ReviewDto>>(listEntity);
         }
 
         public async Task<ReviewDtoCreateResult> Post(ReviewDtoCreate review)
         {
-            var model = _mapper.Map<ReviewModel>(review);
-            var entity = _mapper.Map<ReviewEntity>(model);
+            ReviewModel reviewModel = new ReviewModel()
+            {
+                HotelId = review.HotelId,
+                CustomerId = review.CustomerId,
+                Comment = review.Comment,
+                EvaluationStars = review.EvaluationStars
+            };
+            var entity = _mapper.Map<ReviewEntity>(reviewModel);
             var result = await _repository.InsertAsync(entity);
 
             return _mapper.Map<ReviewDtoCreateResult>(result);
@@ -64,11 +66,26 @@ namespace Service.Services
 
         public async Task<ReviewDtoUpdateResult> Put(ReviewDtoUpdate review)
         {
-            var model = _mapper.Map<ReviewModel>(review);
-            var entity = _mapper.Map<ReviewEntity>(model);
+            ReviewModel reviewModel = new ReviewModel()
+            {
+                Id = review.Id,
+                HotelId = review.HotelId,
+                CustomerId = review.CustomerId,
+                Comment = review.Comment,
+                EvaluationStars = review.EvaluationStars
+            }; 
+            var entity = _mapper.Map<ReviewEntity>(reviewModel);
             var result = await _repository.UpdateAsync(entity);
 
             return _mapper.Map<ReviewDtoUpdateResult>(result);
+        }
+
+       
+
+        public async Task<IEnumerable<ReviewDto>> GetAllByCustomer(Guid customerId)
+        {
+            var listEntity = await _repository.FindByCustomer(customerId);
+            return _mapper.Map<IEnumerable<ReviewDto>>(listEntity);
         }
     }
 }

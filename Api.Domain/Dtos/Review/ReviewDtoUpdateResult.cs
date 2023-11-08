@@ -12,7 +12,7 @@ namespace Domain.Dtos.Review
         public Guid Id { get; set; }
         public int EvaluationStars { get; set; }
         public string Comment { get; set; }
-        public CustomerEntity Customer { get; set; }
-        public HotelEntity Hotel { get; set; }
+        public Guid CustomerId { get; set; }
+        public Guid HotelId { get; set; }
     }
 }

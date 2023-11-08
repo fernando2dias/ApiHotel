@@ -21,9 +21,9 @@ namespace Domain.Dtos.Review
         public string Comment { get; set; }
 
         [Required(ErrorMessage = "Cliente é um campo obrigatório")]
-        public CustomerEntity Customer { get; set; }
+        public Guid CustomerId { get; set; }
 
         [Required(ErrorMessage = "Hotel é um campo obrigatório")]
-        public HotelEntity Hotel { get; set; }
+        public Guid HotelId { get; set; }
     }
 }

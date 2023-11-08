@@ -18,27 +18,13 @@ namespace Data.Implementations
         {
             _dataset = context.Set<ReviewEntity>();
         }
-        public async Task<List<ReviewEntity>> FindByCustomer(ReviewEntity review)
+        public async Task<List<ReviewEntity>> FindByCustomer(Guid customerId)
         {
-            if (review == null || review.Customer == null)
-            {
-                throw new ArgumentNullException(nameof(review), "Review or its associated Customer cannot be null.");
-            }
-
-            var customerId = review.Customer.Id;
-
             return await _dataset.Where(r => r.Customer.Id == customerId).ToListAsync();
         }
 
-        public async Task<List<ReviewEntity>> FindByHotel(ReviewEntity review)
+        public async Task<List<ReviewEntity>> FindByHotel(Guid hotelId)
         {
-            if (review == null || review.Hotel == null)
-            {
-                throw new ArgumentNullException(nameof(review), "Review or its associated Hotel cannot be null.");
-            }
-
-            var hotelId = review.Hotel.Id;
-
             return await _dataset.Where(r => r.Hotel.Id == hotelId).ToListAsync();
         }
     }

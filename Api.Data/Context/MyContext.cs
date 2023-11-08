@@ -222,12 +222,12 @@ namespace Api.Data.Context
                 new RoomEntity
                 {
                     Id = Guid.NewGuid(),
-                    Number = random.Next(1,100),  // Número do quarto
+                    Number = random.Next(1, 100),  // Número do quarto
                     TypeRoom = (TypeRoom)random.Next(1, 12),  // Tipo de quarto aleatório
                     NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                     PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                     Status = Status.Available,  // Status fixo como Available
-                    HotelId = _hotelsId[random.Next(0,4)]  // HotelId aleatório a partir do array
+                    HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
                 },
                  new RoomEntity
                  {
@@ -321,7 +321,7 @@ namespace Api.Data.Context
                          }
             );
 
-            
+
 
 
 
