@@ -15,6 +15,6 @@ namespace Domain.Dtos.Hotel
         public TypeRoom TypeRoom { get; set; }
         public int NumberBeds { get; set; }
         public decimal PricePerNight { get; set; }
-        public HotelEntity Hotel { get; set; }
+        public Guid HotelId { get; set; }
     }
 }

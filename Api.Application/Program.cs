@@ -126,14 +126,14 @@ app.UseAuthorization();
 app.MapControllers();
 
 
-    using (var service = app.Services.GetRequiredService<IServiceScopeFactory>()
-                                                .CreateAsyncScope())
-    {
-        using (var context = service.ServiceProvider.GetService<MyContext>())
-        {
-            context.Database.Migrate();
-        }
-    }
+//using (var service = app.Services.GetRequiredService<IServiceScopeFactory>()
+//                                            .CreateAsyncScope())
+//{
+//    using (var context = service.ServiceProvider.GetService<MyContext>())
+//    {
+//        context.Database.Migrate();
+//    }
+//}
 
 
 

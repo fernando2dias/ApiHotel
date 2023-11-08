@@ -47,17 +47,34 @@ namespace Service.Services
 
         public async Task<RoomDtoCreateResult> Post(RoomDtoCreate room)
         {
-            var model = _mapper.Map<RoomModel>(room);
-            var entity = _mapper.Map<RoomEntity>(model);
+            RoomModel roomModel = new RoomModel() {
+                HotelId = room.HotelId,
+                Number = Int32.Parse(room.Number),
+                TypeRoom = room.TypeRoom,
+                NumberBeds = room.NumberBeds,
+                PricePerNight = room.PricePerNight
+            };
+          
+            var entity = _mapper.Map<RoomEntity>(roomModel);
             var result = await _repository.InsertAsync(entity);
 
             return _mapper.Map<RoomDtoCreateResult>(result);
         }
 
-        public async Task<RoomDtoUpdateResult> Put(RoomDtoUpdate hotel)
+        public async Task<RoomDtoUpdateResult> Put(RoomDtoUpdate room)
         {
-            var model = _mapper.Map<RoomModel>(hotel);
-            var entity = _mapper.Map<RoomEntity>(model);
+            RoomModel roomModel = new RoomModel()
+            {
+                Id = room.Id,
+                HotelId = room.HotelId,
+                Number = Int32.Parse(room.Number),
+                TypeRoom = room.TypeRoom,
+                NumberBeds = room.NumberBeds,
+                PricePerNight = room.PricePerNight
+            };
+
+            //var model = _mapper.Map<RoomModel>(hotel);
+            var entity = _mapper.Map<RoomEntity>(roomModel);
             var result = await _repository.UpdateAsync(entity);
 
             return _mapper.Map<RoomDtoUpdateResult>(result);

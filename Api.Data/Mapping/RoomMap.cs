@@ -23,6 +23,8 @@ namespace Data.Mapping
 
             builder.Property(r => r.NumberBeds).IsRequired();
 
+            builder.Property(r => r.HotelId).IsRequired();
+
         }
     }
 }

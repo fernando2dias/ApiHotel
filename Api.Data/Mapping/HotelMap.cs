@@ -29,6 +29,8 @@ namespace Data.Mapping
 
             builder.Property(h => h.AvgTicket).IsRequired();
 
+
+
         }
     }
 }

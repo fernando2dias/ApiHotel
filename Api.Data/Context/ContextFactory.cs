@@ -10,7 +10,7 @@ namespace Api.Data.Context
             var connectionString = "Data Source=mydatabase.db";
             
             var optionsBuilder = new DbContextOptionsBuilder<MyContext>();
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlite(connectionString);
             return new MyContext(optionsBuilder.Options);
 
         }

@@ -14,7 +14,7 @@ namespace Domain.Entities
         public int NumberBeds { get; set; }
         public decimal PricePerNight { get; set; }
         public Status Status { get; set; }
-
+        public Guid HotelId { get; set; }
         public HotelEntity Hotel { get; set; }
     }
 

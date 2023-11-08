@@ -44,6 +44,14 @@ namespace Domain.Models
             set { _pricePerNight = value; } 
         }
 
+
+        private Guid _hotelId;
+        public Guid HotelId 
+        {
+            get { return _hotelId; }
+            set { _hotelId = value; } 
+        }
+
         private HotelEntity _hotel;
         public HotelEntity Hotel 
         {

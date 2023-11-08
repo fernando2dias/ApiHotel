@@ -23,7 +23,7 @@ namespace Domain.Dtos.Hotel
         public decimal PricePerNight { get; set; }
 
         [Required(ErrorMessage = "É preciso ter um hotel cadastrado")]
-        public HotelEntity Hotel { get; set; }
+        public Guid HotelId { get; set; }
 
     }
 }
