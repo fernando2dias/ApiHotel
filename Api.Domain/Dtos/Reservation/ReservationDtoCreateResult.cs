@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Domain.Dtos.Reservation
 {
-    internal class ReservationDtoCreateResult
+    public class ReservationDtoCreateResult
     {
+        public Guid Id { get; set; }
+        public DateTime ReserveDateInit { get; set; }
+        public DateTime ReserveDateEnd { get; set; }
+        public DateTime Checkin { get; set; }
+        public DateTime Checkout { get; set; }
+        public Guid CustomerId { get; set; }
+        public Guid RoomId { get; set; }
     }
 }

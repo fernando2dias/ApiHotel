@@ -41,7 +41,7 @@ namespace Application.Controllers
 
         //[Authorize("Bearer")]
         [HttpGet]
-        [Route("{id}", Name = "GetReviewById")]
+        [Route("ReviewId/{id}", Name = "GetReviewById")]
         public async Task<ActionResult> Get(Guid id)
         {
             if (!ModelState.IsValid)
@@ -62,7 +62,7 @@ namespace Application.Controllers
 
         //[Authorize("Bearer")]
         [HttpGet]
-        [Route("{customer}", Name = "GetReviewByCustomer")]
+        [Route("customerId/{customerId}", Name = "GetReviewByCustomer")]
         public async Task<ActionResult> GetReviewByCustomer(Guid customerId)
         {
             if (!ModelState.IsValid)
@@ -84,7 +84,7 @@ namespace Application.Controllers
 
         //[Authorize("Bearer")]
         [HttpGet]
-        [Route("{hotel}", Name = "GetReviewByHotel")]
+        [Route("hotelId/{hotelId}", Name = "GetReviewByHotel")]
         public async Task<ActionResult> GetReviewByHotel(Guid hotelId)
         {
             if (!ModelState.IsValid)

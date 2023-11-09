@@ -20,12 +20,12 @@ namespace Data.Implementations
         }
         public async Task<List<ReviewEntity>> FindByCustomer(Guid customerId)
         {
-            return await _dataset.Where(r => r.Customer.Id == customerId).ToListAsync();
+            return await _dataset.Where(r => r.CustomerId == customerId).ToListAsync();
         }
 
         public async Task<List<ReviewEntity>> FindByHotel(Guid hotelId)
         {
-            return await _dataset.Where(r => r.Hotel.Id == hotelId).ToListAsync();
+            return await _dataset.Where(r => r.HotelId == hotelId).ToListAsync();
         }
     }
 }

@@ -60,8 +60,9 @@ namespace Service.Services
 
         public async Task<ReservationEntity> CheckIn(Guid id)
         {
-            ReservationEntity _reservation = await Get(id);
-
+            var _reservation = await _repository.GetByHotelId(id);
+           // ReservationEntity _reservation = await Get(id);
+            
             if (_repository is null || _reservation.Room.Status != Status.Reserved)
             {
                 return new ReservationEntity();
@@ -79,7 +80,8 @@ namespace Service.Services
 
         public async Task<ReservationEntity> CheckOut(Guid id)
         {
-            ReservationEntity _reservation = await Get(id);
+            var _reservation = await _repository.GetByHotelId(id);
+            // ReservationEntity _reservation = await Get(id);
 
             if (_repository is null || _reservation.Room.Status != Status.Busy)
             {

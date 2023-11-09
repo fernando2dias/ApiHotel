@@ -40,7 +40,7 @@ namespace Application.Controllers
 
         //[Authorize("Bearer")]
         [HttpGet]
-        [Route("{id}", Name = "GetReservationById")]
+        [Route("GetReservationById/{id}", Name = "GetReservationById")]
         public async Task<ActionResult> Get(Guid id)
         {
             if (!ModelState.IsValid)
@@ -60,7 +60,7 @@ namespace Application.Controllers
 
         //[Authorize("Bearer")]
         [HttpGet]
-        [Route("{ReservationCustomer}", Name = "GetReservationByCustormerId")]
+        [Route("GetReservationByCustormerId/{customerId}", Name = "GetReservationByCustormerId")]
         public async Task<ActionResult> GetReservationByCustomer(Guid customerId)
         {
             if (!ModelState.IsValid)
@@ -80,7 +80,7 @@ namespace Application.Controllers
 
         //[Authorize("Bearer")]
         [HttpGet]
-        [Route("{ReservationHotel}", Name = "GetReservationByHotelId")]
+        [Route("GetReservationByHotelId/{hotelId}", Name = "GetReservationByHotelId")]
         public async Task<ActionResult> GetReservationByHotel(Guid hotelId)
         {
             if (!ModelState.IsValid)
@@ -170,6 +170,47 @@ namespace Application.Controllers
             try
             {
                 return Ok(await _service.Delete(id));
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+
+        //[Authorize("Bearer")]
+        [HttpPut]
+        [Route("CheckIn/{id}", Name = "CheckIn")]
+        public async Task<ActionResult> CheckIn(Guid id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                return Ok(await _service.CheckIn(id));
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        //[Authorize("Bearer")]
+        [HttpPut]
+        [Route("CheckOut/{id}", Name = "CheckOut")]
+        public async Task<ActionResult> CheckOut(Guid id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                return Ok(await _service.CheckOut(id));
             }
             catch (ArgumentException e)
             {

@@ -39,6 +39,7 @@ namespace Api.Data.Context
             Guid _hotelId4 = Guid.NewGuid();
             Guid _hotelId5 = Guid.NewGuid();
 
+
             Guid[] _hotelsId = { _hotelId1, _hotelId2, _hotelId3, _hotelId4, _hotelId5 };
             modelBuilder.Entity<UserEntity>().HasData(
                 new UserEntity
@@ -53,11 +54,11 @@ namespace Api.Data.Context
 
 
 
-
+            Guid _customerId = Guid.NewGuid();
             modelBuilder.Entity<CustomerEntity>().HasData(
                 new CustomerEntity
                 {
-                    Id = Guid.NewGuid(),
+                    Id = _customerId,
                     Name = "Fernando",
                     LastName = "Dias Motta",
                     Email = "fernando3dias@gmail.com",
@@ -227,7 +228,9 @@ namespace Api.Data.Context
                     NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                     PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                     Status = Status.Available,  // Status fixo como Available
-                    HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                    HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
                 },
                  new RoomEntity
                  {
@@ -237,7 +240,9 @@ namespace Api.Data.Context
                      NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                      PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                      Status = Status.Available,  // Status fixo como Available
-                     HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                     HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                     CreateAt = DateTime.Now,
+                     UpdateAt = DateTime.Now
                  },
                   new RoomEntity
                   {
@@ -247,7 +252,9 @@ namespace Api.Data.Context
                       NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                       PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                       Status = Status.Available,  // Status fixo como Available
-                      HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                      HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                      CreateAt = DateTime.Now,
+                      UpdateAt = DateTime.Now
                   },
                    new RoomEntity
                    {
@@ -257,7 +264,9 @@ namespace Api.Data.Context
                        NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                        PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                        Status = Status.Available,  // Status fixo como Available
-                       HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                       HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                       CreateAt = DateTime.Now,
+                       UpdateAt = DateTime.Now
                    },
                     new RoomEntity
                     {
@@ -267,7 +276,9 @@ namespace Api.Data.Context
                         NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                         PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                         Status = Status.Available,  // Status fixo como Available
-                        HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                        HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                        CreateAt = DateTime.Now,
+                        UpdateAt = DateTime.Now
                     },
                      new RoomEntity
                      {
@@ -277,7 +288,9 @@ namespace Api.Data.Context
                          NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                          PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                          Status = Status.Available,  // Status fixo como Available
-                         HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                         HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                         CreateAt = DateTime.Now,
+                         UpdateAt = DateTime.Now
                      },
                       new RoomEntity
                       {
@@ -287,7 +300,9 @@ namespace Api.Data.Context
                           NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                           PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                           Status = Status.Available,  // Status fixo como Available
-                          HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                          HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                          CreateAt = DateTime.Now,
+                          UpdateAt = DateTime.Now
                       },
                        new RoomEntity
                        {
@@ -297,7 +312,9 @@ namespace Api.Data.Context
                            NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                            PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                            Status = Status.Available,  // Status fixo como Available
-                           HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                           HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                           CreateAt = DateTime.Now,
+                           UpdateAt = DateTime.Now
                        },
                         new RoomEntity
                         {
@@ -307,7 +324,9 @@ namespace Api.Data.Context
                             NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                             PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                             Status = Status.Available,  // Status fixo como Available
-                            HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                            HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                            CreateAt = DateTime.Now,
+                            UpdateAt = DateTime.Now
                         },
                          new RoomEntity
                          {
@@ -317,9 +336,129 @@ namespace Api.Data.Context
                              NumberBeds = random.Next(1, 5),  // Número de camas entre 1 e 4
                              PricePerNight = random.Next(80, 200),  // Preço por noite aleatório
                              Status = Status.Available,  // Status fixo como Available
-                             HotelId = _hotelsId[random.Next(0, 4)]  // HotelId aleatório a partir do array
+                             HotelId = _hotelsId[random.Next(0, 4)],  // HotelId aleatório a partir do array
+                             CreateAt = DateTime.Now,
+                             UpdateAt = DateTime.Now
                          }
             );
+
+
+            modelBuilder.Entity<ReviewEntity>().HasData(
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 3,
+                    Comment = "Bom serviço, mas pode melhorar",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                },
+
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 4,
+                    Comment = "Experiência positiva no hotel",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                },
+                
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 2,
+                    Comment = "Não fiquei satisfeito com a estadia",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                },
+                
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 5,
+                    Comment = "Incrível! Superou minhas expectativas",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                },
+                
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 1,
+                    Comment = "Péssima experiência. Não recomendo",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                },
+                
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 4,
+                    Comment = "Fiquei satisfeito com a estadia",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                },
+                
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 0,
+                    Comment = "Terrível! Evite este lugar a todo custo",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                },
+                
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 5,
+                    Comment = "Melhor hotel que já visitei",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                },
+                
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 3,
+                    Comment = "Nada excepcional, mas foi ok",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                },
+                
+                new ReviewEntity
+                {
+                    Id = Guid.NewGuid(),
+                    EvaluationStars = 4,
+                    Comment = "Boa escolha para a estadia",
+                    CustomerId = _customerId,
+                    HotelId = _hotelsId[random.Next(0, 4)],
+                    CreateAt = DateTime.Now,
+                    UpdateAt = DateTime.Now
+                }
+                
+
+
+
+
+                );
 
 
 

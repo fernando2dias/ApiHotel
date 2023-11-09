@@ -45,18 +45,18 @@ namespace Domain.Models
         }
 
 
-        private CustomerEntity _customer;
-        public CustomerEntity Customer 
+        private Guid _customerId;
+        public Guid CustomerId 
         {
-            get { return _customer; }
-            set { _customer = value; } 
+            get { return _customerId; }
+            set { _customerId = value; } 
         }
 
-        private RoomEntity _room;
-        public RoomEntity Room 
+        private Guid _roomId;
+        public Guid RoomId 
         {
-            get { return _room; }
-            set { _room = value; } 
+            get { return _roomId; }
+            set { _roomId = value; } 
         }
     }
 }

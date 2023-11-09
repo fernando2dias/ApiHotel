@@ -31,6 +31,6 @@ public record Reservation
     DateTime ReservationDateEnd,
     DateTime Checkin,
     DateTime Checkout,
-    CustomerEntity Customer,
-    RoomEntity Room
+    Guid CustomerId,
+    Guid RoomId
     );

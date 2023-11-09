@@ -13,8 +13,10 @@ namespace Domain.Entities
         public DateTime ReserveDateEnd { get; set; }
         public DateTime Checkin { get; set; }
         public DateTime Checkout { get; set; }
-        public CustomerEntity Customer { get; set; }
+        public Guid CustomerId { get; set; }
+        public Guid RoomId { get; set; }
         public RoomEntity Room { get; set; }
+        public CustomerEntity Customer { get; set; }
 
     }
 

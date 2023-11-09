@@ -21,6 +21,12 @@ namespace Data.Mapping
 
             builder.Property(r => r.ReserveDateEnd).IsRequired();
 
+            builder.Property(r => r.CustomerId).IsRequired();
+
+            builder.Property(r => r.RoomId).IsRequired();
+
+
+
         }
     }
 }

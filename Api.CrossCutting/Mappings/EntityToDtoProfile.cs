@@ -9,6 +9,7 @@ using Domain.Dtos.Customer;
 using Domain.Dtos.Hotel;
 using Domain.Dtos.Review;
 using Domain.Entities;
+using Domain.Interfaces.Services.Reservation;
 
 namespace Api.CrossCutting.Mappings
 {
@@ -73,10 +74,21 @@ namespace Api.CrossCutting.Mappings
             CreateMap<ReviewDto, ReviewEntity>()
                 .ReverseMap();
 
-            CreateMap<ReviewDtoCreateResult, RoomEntity>()
+            CreateMap<ReviewDtoCreateResult, ReviewEntity>()
                 .ReverseMap();
 
-            CreateMap<ReviewDtoUpdateResult, RoomEntity>()
+            CreateMap<ReviewDtoUpdateResult, ReviewEntity>()
+                .ReverseMap();
+
+
+
+            CreateMap<Reservation, ReservationEntity>()
+                .ReverseMap();
+
+            CreateMap<Reservation, ReservationEntity>()
+                .ReverseMap();
+
+            CreateMap<Reservation, ReservationEntity>()
                 .ReverseMap();
 
 

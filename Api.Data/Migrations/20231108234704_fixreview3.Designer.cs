@@ -3,6 +3,7 @@ using System;
 using Api.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20231108234704_fixreview3")]
+    partial class fixreview3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
@@ -49,11 +51,11 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c74e2996-2485-4eb2-9d6c-03d7d8a0b397"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8680),
+                            Id = new Guid("762f0d15-b883-4577-a543-6191d5893e91"),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(239),
                             Email = "fer@admin.com.br",
                             Name = "Administrador",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8689)
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(249)
                         });
                 });
 
@@ -113,15 +115,15 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
+                            Id = new Guid("0d3b57e8-55ae-405c-b0de-2f30e1288b06"),
                             BirthDate = new DateTime(1986, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CPF = "111.222.333-44",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8837),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(406),
                             Email = "fernando3dias@gmail.com",
                             LastName = "Dias Motta",
                             Name = "Fernando",
                             Password = "123mudar",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8838)
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(407)
                         });
                 });
 
@@ -222,134 +224,134 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("746aff68-3e9f-4621-990d-8889275aba05"),
+                            Id = new Guid("86faabfb-21b8-4eca-a999-db074e489e37"),
                             Address = "Rodovia Senador José Ermírio de Moraes, 1425",
                             AvgTicket = 150m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8879),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(420),
                             Name = "Facens Hotel",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8880),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(420),
                             ZipCode = "18085-784"
                         },
                         new
                         {
-                            Id = new Guid("ae6eae3f-870a-4de0-a14a-9ad5baaf1929"),
+                            Id = new Guid("ee459eae-f928-480b-b795-0fa4ec4dcded"),
                             Address = "Avenida das Estrelas, 123",
                             AvgTicket = 250m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8882),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(422),
                             Name = "Luxury Palace Hotel",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8882),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(422),
                             ZipCode = "12345-678"
                         },
                         new
                         {
-                            Id = new Guid("5d82ff9c-349d-471a-beda-b5abfb7f06bf"),
+                            Id = new Guid("a8bd52b9-60ae-4de7-a1d0-554c39c27d84"),
                             Address = "Rua das Flores, 456",
                             AvgTicket = 120m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8883),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(424),
                             Name = "Cozy Inn",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8884),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(424),
                             ZipCode = "54321-987"
                         },
                         new
                         {
-                            Id = new Guid("3cbbf850-706a-4c4d-874b-c6f9e8c85bf3"),
+                            Id = new Guid("eebfd31c-9492-471f-b844-2dc51d2cc6b7"),
                             Address = "Avenida Beira-Mar, 789",
                             AvgTicket = 180m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8885),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(425),
                             Name = "Harbor View Hotel",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8886),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(426),
                             ZipCode = "98765-432"
                         },
                         new
                         {
-                            Id = new Guid("2fab9ede-2d00-4d96-a639-11bd168d6a38"),
+                            Id = new Guid("03158875-1b25-4844-81f4-8fe88147d56b"),
                             Address = "Praia da Areia Dourada, S/N",
                             AvgTicket = 300m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8887),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(427),
                             Name = "Golden Sands Resort",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8887),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(427),
                             ZipCode = "34567-890"
                         },
                         new
                         {
-                            Id = new Guid("9670ad43-f26d-4989-a634-78bf33ae9cf1"),
+                            Id = new Guid("9fe39e98-4bdd-482a-b835-7b6616a9665d"),
                             Address = "Margem do Rio, 987",
                             AvgTicket = 160m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8889),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(429),
                             Name = "Riverside Lodge",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8890),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(429),
                             ZipCode = "76543-210"
                         },
                         new
                         {
-                            Id = new Guid("971dc5b3-b1ce-4ff1-b3a1-3a02155a7c82"),
+                            Id = new Guid("98a51d43-35d0-495b-9932-c62311f4b130"),
                             Address = "Praça Principal, 654",
                             AvgTicket = 280m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8891),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(430),
                             Name = "The Grand Plaza Hotel",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8892),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(431),
                             ZipCode = "23456-789"
                         },
                         new
                         {
-                            Id = new Guid("73413cb7-1e85-4cc5-93db-517aa5fd8b0d"),
+                            Id = new Guid("2045987e-853c-4fec-9c4e-4813347e044b"),
                             Address = "Avenida do Pôr do Sol, 321",
                             AvgTicket = 140m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8893),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(432),
                             Name = "Sunset View Inn",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8893),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(433),
                             ZipCode = "87654-321"
                         },
                         new
                         {
-                            Id = new Guid("54b54b3e-01ab-4f9a-9f97-78e90caa1843"),
+                            Id = new Guid("8dc27776-7086-426c-9657-a4f3ebf3c336"),
                             Address = "Rua das Montanhas, 567",
                             AvgTicket = 200m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8895),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(434),
                             Name = "Majestic Heights Hotel",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8895),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(434),
                             ZipCode = "54321-234"
                         },
                         new
                         {
-                            Id = new Guid("2a929d45-1a92-41d6-9f94-cbee7fa3aed6"),
+                            Id = new Guid("dcbb8afa-7a1b-4f3c-bf92-88f9f6863c9d"),
                             Address = "Avenida Central, 876",
                             AvgTicket = 130m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8896),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(436),
                             Name = "Sorocaba Suites",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8897),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(436),
                             ZipCode = "12345-543"
                         },
                         new
                         {
-                            Id = new Guid("2ec772b5-10ce-44e6-a39c-d10a6a4ea2d5"),
+                            Id = new Guid("c56db9bc-65d4-40cf-bd0f-427d1b1ba241"),
                             Address = "Trilha da Montanha, 765",
                             AvgTicket = 190m,
                             City = "Sorocaba",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8901),
+                            CreateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(438),
                             Name = "Mountain View Lodge",
                             State = "SP",
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8901),
+                            UpdateAt = new DateTime(2023, 11, 8, 20, 47, 4, 346, DateTimeKind.Local).AddTicks(439),
                             ZipCode = "65432-123"
                         });
                 });
@@ -422,108 +424,6 @@ namespace Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Review", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("7dca8101-055d-44b9-a861-43878356dc49"),
-                            Comment = "Bom serviço, mas pode melhorar",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8970),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 3,
-                            HotelId = new Guid("ae6eae3f-870a-4de0-a14a-9ad5baaf1929"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8971)
-                        },
-                        new
-                        {
-                            Id = new Guid("33ab9237-7e1d-4e5c-a714-00e8e32899b6"),
-                            Comment = "Experiência positiva no hotel",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8972),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 4,
-                            HotelId = new Guid("3cbbf850-706a-4c4d-874b-c6f9e8c85bf3"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8973)
-                        },
-                        new
-                        {
-                            Id = new Guid("8a8fe94a-207f-495d-884c-4058aeb0d887"),
-                            Comment = "Não fiquei satisfeito com a estadia",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8974),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 2,
-                            HotelId = new Guid("3cbbf850-706a-4c4d-874b-c6f9e8c85bf3"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8975)
-                        },
-                        new
-                        {
-                            Id = new Guid("c0cf12f2-6ce2-4f2a-a7b1-fe94812088d8"),
-                            Comment = "Incrível! Superou minhas expectativas",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8978),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 5,
-                            HotelId = new Guid("3cbbf850-706a-4c4d-874b-c6f9e8c85bf3"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8978)
-                        },
-                        new
-                        {
-                            Id = new Guid("d14d43da-4592-49ca-a944-575b2cb803f9"),
-                            Comment = "Péssima experiência. Não recomendo",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8979),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 1,
-                            HotelId = new Guid("ae6eae3f-870a-4de0-a14a-9ad5baaf1929"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8980)
-                        },
-                        new
-                        {
-                            Id = new Guid("36d0d81c-4cbd-482c-bfd5-3261c1226d6a"),
-                            Comment = "Fiquei satisfeito com a estadia",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8981),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 4,
-                            HotelId = new Guid("746aff68-3e9f-4621-990d-8889275aba05"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8982)
-                        },
-                        new
-                        {
-                            Id = new Guid("0bd286be-152a-4834-8696-f59d68c62fa2"),
-                            Comment = "Terrível! Evite este lugar a todo custo",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8983),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 0,
-                            HotelId = new Guid("3cbbf850-706a-4c4d-874b-c6f9e8c85bf3"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8983)
-                        },
-                        new
-                        {
-                            Id = new Guid("6b6abfb3-292c-4711-8668-4cdff982e0ca"),
-                            Comment = "Melhor hotel que já visitei",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8985),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 5,
-                            HotelId = new Guid("ae6eae3f-870a-4de0-a14a-9ad5baaf1929"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8985)
-                        },
-                        new
-                        {
-                            Id = new Guid("053d83d1-559c-4550-9668-851ea3eb26ac"),
-                            Comment = "Nada excepcional, mas foi ok",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8986),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 3,
-                            HotelId = new Guid("3cbbf850-706a-4c4d-874b-c6f9e8c85bf3"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8987)
-                        },
-                        new
-                        {
-                            Id = new Guid("ab6da024-33c8-4a64-99a7-142a953ef5a1"),
-                            Comment = "Boa escolha para a estadia",
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8988),
-                            CustomerId = new Guid("e6246583-2c53-4310-a72b-16f807674d18"),
-                            EvaluationStars = 4,
-                            HotelId = new Guid("ae6eae3f-870a-4de0-a14a-9ad5baaf1929"),
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8989)
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.RoomEntity", b =>
@@ -565,123 +465,103 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ddced037-d7c3-400c-88d7-2e774b41aac3"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8932),
-                            HotelId = new Guid("ae6eae3f-870a-4de0-a14a-9ad5baaf1929"),
-                            Number = 98,
+                            Id = new Guid("78d81163-0016-4409-8ffb-956c5bd4a880"),
+                            HotelId = new Guid("a8bd52b9-60ae-4de7-a1d0-554c39c27d84"),
+                            Number = 46,
+                            NumberBeds = 1,
+                            PricePerNight = 92m,
+                            Status = 1,
+                            TypeRoom = 11
+                        },
+                        new
+                        {
+                            Id = new Guid("4f1ec501-e2b2-4067-9c06-0fe96e6f23a7"),
+                            HotelId = new Guid("86faabfb-21b8-4eca-a999-db074e489e37"),
+                            Number = 49,
                             NumberBeds = 3,
-                            PricePerNight = 180m,
-                            Status = 1,
-                            TypeRoom = 5,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8933)
-                        },
-                        new
-                        {
-                            Id = new Guid("be4fa41f-03b6-41e5-84d9-013b640de52b"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8935),
-                            HotelId = new Guid("5d82ff9c-349d-471a-beda-b5abfb7f06bf"),
-                            Number = 9,
-                            NumberBeds = 4,
-                            PricePerNight = 132m,
-                            Status = 1,
-                            TypeRoom = 10,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8936)
-                        },
-                        new
-                        {
-                            Id = new Guid("2eb4d441-6927-438d-bccd-cf5a08ed34cb"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8938),
-                            HotelId = new Guid("ae6eae3f-870a-4de0-a14a-9ad5baaf1929"),
-                            Number = 29,
-                            NumberBeds = 4,
-                            PricePerNight = 106m,
-                            Status = 1,
-                            TypeRoom = 9,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8938)
-                        },
-                        new
-                        {
-                            Id = new Guid("260f640b-03d3-488c-9ad2-e2ed5c169ceb"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8940),
-                            HotelId = new Guid("3cbbf850-706a-4c4d-874b-c6f9e8c85bf3"),
-                            Number = 45,
-                            NumberBeds = 2,
                             PricePerNight = 80m,
                             Status = 1,
-                            TypeRoom = 6,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8941)
+                            TypeRoom = 5
                         },
                         new
                         {
-                            Id = new Guid("13dde1cc-853e-4ec6-9d31-3643a53ff5c6"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8943),
-                            HotelId = new Guid("3cbbf850-706a-4c4d-874b-c6f9e8c85bf3"),
-                            Number = 3,
-                            NumberBeds = 2,
-                            PricePerNight = 155m,
-                            Status = 1,
-                            TypeRoom = 11,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8943)
-                        },
-                        new
-                        {
-                            Id = new Guid("4399ecc2-b751-42f1-8558-18be5cb6096b"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8947),
-                            HotelId = new Guid("5d82ff9c-349d-471a-beda-b5abfb7f06bf"),
-                            Number = 63,
+                            Id = new Guid("c50d9ecb-c4f9-41a8-af27-5953cce4871b"),
+                            HotelId = new Guid("a8bd52b9-60ae-4de7-a1d0-554c39c27d84"),
+                            Number = 73,
                             NumberBeds = 3,
-                            PricePerNight = 182m,
+                            PricePerNight = 107m,
                             Status = 1,
-                            TypeRoom = 1,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8947)
+                            TypeRoom = 2
                         },
                         new
                         {
-                            Id = new Guid("e69eee1c-4920-4fc1-a75a-3e0288add687"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8949),
-                            HotelId = new Guid("5d82ff9c-349d-471a-beda-b5abfb7f06bf"),
-                            Number = 29,
+                            Id = new Guid("3ccbb7c5-8504-4429-aa6c-e8768a9885d8"),
+                            HotelId = new Guid("a8bd52b9-60ae-4de7-a1d0-554c39c27d84"),
+                            Number = 65,
+                            NumberBeds = 4,
+                            PricePerNight = 156m,
+                            Status = 1,
+                            TypeRoom = 8
+                        },
+                        new
+                        {
+                            Id = new Guid("37fae2e0-c0a3-4d90-babe-ad3daaee523f"),
+                            HotelId = new Guid("a8bd52b9-60ae-4de7-a1d0-554c39c27d84"),
+                            Number = 47,
+                            NumberBeds = 1,
+                            PricePerNight = 91m,
+                            Status = 1,
+                            TypeRoom = 8
+                        },
+                        new
+                        {
+                            Id = new Guid("016ee195-c138-4ba4-98b6-d8cd6b129715"),
+                            HotelId = new Guid("eebfd31c-9492-471f-b844-2dc51d2cc6b7"),
+                            Number = 41,
                             NumberBeds = 2,
-                            PricePerNight = 93m,
+                            PricePerNight = 94m,
                             Status = 1,
-                            TypeRoom = 7,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8949)
+                            TypeRoom = 1
                         },
                         new
                         {
-                            Id = new Guid("70449765-5fb3-41a8-8a01-c2b89fc1eefa"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8951),
-                            HotelId = new Guid("5d82ff9c-349d-471a-beda-b5abfb7f06bf"),
-                            Number = 84,
+                            Id = new Guid("1a4f6607-4ce3-4ac8-8585-3576f2027789"),
+                            HotelId = new Guid("ee459eae-f928-480b-b795-0fa4ec4dcded"),
+                            Number = 96,
                             NumberBeds = 3,
                             PricePerNight = 135m,
                             Status = 1,
-                            TypeRoom = 11,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8952)
+                            TypeRoom = 11
                         },
                         new
                         {
-                            Id = new Guid("112b2a60-2444-48ef-9f9d-a6c7f8586007"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8954),
-                            HotelId = new Guid("3cbbf850-706a-4c4d-874b-c6f9e8c85bf3"),
-                            Number = 59,
-                            NumberBeds = 1,
-                            PricePerNight = 166m,
+                            Id = new Guid("31deec56-8a89-4836-ab6f-fea56c0b75b3"),
+                            HotelId = new Guid("86faabfb-21b8-4eca-a999-db074e489e37"),
+                            Number = 28,
+                            NumberBeds = 4,
+                            PricePerNight = 141m,
                             Status = 1,
-                            TypeRoom = 5,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8954)
+                            TypeRoom = 4
                         },
                         new
                         {
-                            Id = new Guid("0ee99932-398b-48a4-9aa0-36125ae0e3db"),
-                            CreateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8956),
-                            HotelId = new Guid("5d82ff9c-349d-471a-beda-b5abfb7f06bf"),
-                            Number = 74,
+                            Id = new Guid("ee85f342-c4c7-45c6-abe4-3aa9e850e866"),
+                            HotelId = new Guid("eebfd31c-9492-471f-b844-2dc51d2cc6b7"),
+                            Number = 49,
                             NumberBeds = 2,
-                            PricePerNight = 95m,
+                            PricePerNight = 105m,
                             Status = 1,
-                            TypeRoom = 7,
-                            UpdateAt = new DateTime(2023, 11, 8, 21, 49, 17, 767, DateTimeKind.Local).AddTicks(8957)
+                            TypeRoom = 2
+                        },
+                        new
+                        {
+                            Id = new Guid("5576f8ba-2dd3-42f5-b8ed-608f5b7850e3"),
+                            HotelId = new Guid("a8bd52b9-60ae-4de7-a1d0-554c39c27d84"),
+                            Number = 1,
+                            NumberBeds = 3,
+                            PricePerNight = 143m,
+                            Status = 1,
+                            TypeRoom = 4
                         });
                 });
 

@@ -13,5 +13,9 @@ namespace Domain.Repository
         Task<IEnumerable<ReservationEntity>> ReservationByCustomer(Guid id);
         Task<IEnumerable<ReservationEntity>> ReservationByHotel(Guid id);
 
+        Task<ReservationEntity> GetByHotelId(Guid id);
+
+
+
     }
 }

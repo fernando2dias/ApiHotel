@@ -23,6 +23,10 @@ namespace Data.Mapping
 
             builder.Property(r => r.Comment).IsRequired();
 
+            builder.Property(r => r.HotelId).IsRequired();
+
+            builder.Property(r => r.CustomerId).IsRequired();
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Dtos.Reservation
 {
-    internal class ReservationDtoCreate
+    public class ReservationDtoCreate
     {
     }
 }

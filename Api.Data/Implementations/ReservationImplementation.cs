@@ -18,6 +18,11 @@ namespace Data.Implementations
             _dataset = context.Set<ReservationEntity>();
         }
 
+        public async Task<ReservationEntity> GetByHotelId(Guid id)
+        {
+            return await _dataset.Include(r => r.Customer).Include(r => r.Room).Where(r => r.Id == id).FirstOrDefaultAsync();
+        }
+
         public async Task<IEnumerable<ReservationEntity>> ReservationByCustomer(Guid id)
         {
             return await _dataset.Include(r => r.Customer).Where(r => r.Customer.Id == id).ToListAsync();
